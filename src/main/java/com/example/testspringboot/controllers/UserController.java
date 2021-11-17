@@ -21,14 +21,18 @@ public class UserController {
 
     @PostMapping(value = "/users")
     public ResponseEntity<?> create(@RequestBody User user) {
-        userService.create(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        //userService.create(user);
+        final User chekUser = userService.readByUsername(user.getUsername());
+        if(chekUser == null) {
+            userService.create(user);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(chekUser ,HttpStatus.FOUND);
     }
 
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> read() {
         final List<User> users = userService.readAll();
-
         return users != null &&  !users.isEmpty()
                 ? new ResponseEntity<>(users, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
