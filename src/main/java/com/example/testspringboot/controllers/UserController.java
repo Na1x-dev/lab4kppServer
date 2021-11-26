@@ -23,17 +23,17 @@ public class UserController {
     public ResponseEntity<?> create(@RequestBody User user) {
         //userService.create(user);
         final User chekUser = userService.readByUsername(user.getUsername());
-        if(chekUser == null) {
+        if (chekUser == null) {
             userService.create(user);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
-        return new ResponseEntity<>(chekUser ,HttpStatus.FOUND);
+        return new ResponseEntity<>(chekUser, HttpStatus.FOUND);
     }
 
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> read() {
         final List<User> users = userService.readAll();
-        return users != null &&  !users.isEmpty()
+        return users != null && !users.isEmpty()
                 ? new ResponseEntity<>(users, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
@@ -41,7 +41,14 @@ public class UserController {
     @GetMapping(value = "/users/byId/{id}")
     public ResponseEntity<User> read(@PathVariable(name = "id") int id) {
         final User user = userService.read(id);
+        return user != null
+                ? new ResponseEntity<>(user, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 
+    @GetMapping(value = "/users/byUsername/{username}")
+    public ResponseEntity<User> readByUsername(@PathVariable(name = "username") String username) {
+        final User user = userService.readByUsername(username);
         return user != null
                 ? new ResponseEntity<>(user, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -65,10 +72,4 @@ public class UserController {
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
-    @GetMapping(value = "/users/byUsername/{username}")
-    public ResponseEntity<User> readByUsername(@PathVariable(name = "username") String username) {
-        final User user = userService.readByUsername(username);
-        return user != null
-                ? new ResponseEntity<>(user, HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_FOUND);}
 }
