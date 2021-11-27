@@ -15,6 +15,6 @@ INSERT INTO bills (username,iban, card_number, card_name, card_validity, balance
 INSERT INTO transactions (username, name_of_transaction, check_number, price, description, card_number ) VALUES
     ('georgiy','чаек', '0000000001', 10.99, 'greenfield spring melody', '4511 6063 7123 4160'),
     ('sergey',  'кофеек', '0000000002', 21.99, 'я не разбираюсь в кофе', '4409 0374 4585 9649'),
-    ('maksim', 'ноутбук acer с rtx 3050', '0000000003', 2625, 'для Forza Horizon 5', '4287 3581 2802 3429'),
-    ('dimas', 'fisting', '0000000004', 300, ' - ', '4942 7392 6843 9979'),
+    ('sergey', 'ноутбук acer с rtx 3050', '0000000003', 2625, 'для Forza Horizon 5', '4287 3581 2802 3429'),
+    ('sergey', 'fisting', '0000000004', 300, ' - ', '4942 7392 6843 9979'),
     ('mihail', 'новая жопа', '0000000005', 999.99, ' - ', '4062 2497 5672 0462');
