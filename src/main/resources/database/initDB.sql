@@ -1,3 +1,8 @@
+drop table users;
+drop table bills;
+drop table transactions;
+drop table components;
+
 CREATE TABLE IF NOT EXISTS users
 (
     id    BIGSERIAL PRIMARY KEY ,
@@ -16,7 +21,8 @@ CREATE TABLE IF NOT EXISTS bills
     card_number VARCHAR (19) NOT NULL,
     card_name VARCHAR (200) NOT NULL,
     card_validity VARCHAR (5) NOT NULL,
-    balance DOUBLE PRECISION NOT NULL
+    balance DOUBLE PRECISION NOT NULL,
+    is_active BOOLEAN NOT NULL
     );
 
 CREATE TABLE IF NOT EXISTS transactions
@@ -26,6 +32,14 @@ CREATE TABLE IF NOT EXISTS transactions
     name_of_transaction VARCHAR (200) NOT NULL,
     check_number VARCHAR (10) NOT NULL,
     price DOUBLE PRECISION NOT NULL,
-    description VARCHAR (250) NOT NULL,
+    description VARCHAR NOT NULL,
     card_number VARCHAR (19) NOT NULL
+    );
+
+CREATE TABLE IF NOT EXISTS components
+(
+    id  BIGSERIAL PRIMARY KEY ,
+    name_of_component VARCHAR (200) NOT NULL,
+    price DOUBLE PRECISION NOT NULL,
+    description VARCHAR NOT NULL
     );
