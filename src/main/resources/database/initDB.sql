@@ -22,7 +22,8 @@ CREATE TABLE IF NOT EXISTS bills
     card_name VARCHAR (200) NOT NULL,
     card_validity VARCHAR (5) NOT NULL,
     balance DOUBLE PRECISION NOT NULL,
-    is_active BOOLEAN NOT NULL
+    is_auto_block BOOLEAN NOT NULL,
+    is_manual_block BOOLEAN NOT NULL
     );
 
 CREATE TABLE IF NOT EXISTS transactions
