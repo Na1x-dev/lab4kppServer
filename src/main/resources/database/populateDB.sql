@@ -12,12 +12,12 @@ INSERT INTO bills (username,iban, card_number, card_name, card_validity, balance
     ('dimas', 'BY86879383133978783578788135', '4942 7392 6843 9979', 'Карта 1', '07/25', 94.21, false, false),
     ('mihail', 'BY06134113218856234431793672', '4062 2497 5672 0462', 'Карта 1', '06/22', 21.24, false, false);
 
-INSERT INTO transactions (username, name_of_transaction, check_number, price, description, card_number ) VALUES
-    ('georgiy','чаек', '0000000001', 10.99, 'greenfield spring melody', '4511 6063 7123 4160'),
-    ('sergey',  'кофеек', '0000000002', 21.99, 'я не разбираюсь в кофе', '4409 0374 4585 9649'),
-    ('sergey', 'ноутбук acer с rtx 3050', '0000000003', 2625, 'для Forza Horizon 5', '4287 3581 2802 3429'),
-    ('sergey', 'fisting', '0000000004', 300, ' - ', '4942 7392 6843 9979'),
-    ('mihail', 'новая жопа', '0000000005', 999.99, ' - ', '4062 2497 5672 0462');
+-- INSERT INTO transactions (username, name_of_transaction, check_number, price, description, card_number ) VALUES
+--     ('georgiy','чаек', '0000000001', 10.99, 'greenfield spring melody', '4511 6063 7123 4160'),
+--     ('sergey',  'кофеек', '0000000002', 21.99, 'я не разбираюсь в кофе', '4409 0374 4585 9649'),
+--     ('sergey', 'ноутбук acer с rtx 3050', '0000000003', 2625, 'для Forza Horizon 5', '4287 3581 2802 3429'),
+--     ('sergey', 'fisting', '0000000004', 300, ' - ', '4942 7392 6843 9979'),
+--     ('mihail', 'новая жопа', '0000000005', 999.99, ' - ', '4062 2497 5672 0462');
 
 INSERT INTO components (name_of_component, price, description) VALUES
     ('PowerColor AXRX 550 2GBD5-HLEV2', 259.00, ' - '),
